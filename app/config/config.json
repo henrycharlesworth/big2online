@@ -1,0 +1,21 @@
+{
+	"dbURI": "mongodb://localhost/userAuthTest",
+	"sessionSecret": "THEGREATandWonderfulHernBear564738292938485757483839",
+	"facebook": {
+		"clientID": "1721178281536502",
+		"clientSecret": "be3db5b267241967bbed0c9c2e2c7b85",
+		"callbackURL": "/auth/facebook/callback",
+		"profileFields": ["id", "displayName", "photos"]
+	},
+	"twitter": {
+		"consumerKey": "BPMKH32VouLKSyHYh7wRjh2ls",
+		"consumerSecret": " EX4RvqFJLP36gwlvmRB3ypqLehiqziimhFxoTGq5bt9h54FTJs",
+		"callbackURL": "/auth/twitter/callback",
+		"profileFields": ["id", "displayName", "photos"]
+	},
+	"redis": {
+		"host": "127.0.0.1",
+		"port": 6379,
+		"password": ""
+	}
+}

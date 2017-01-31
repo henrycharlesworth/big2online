@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Big 2 Game Room</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+  </head>
+  <body>
+  
+  <div class="top-banner">
+	<div width="300"> <a href="/img/big2logo.png"><img src="/img/big2logo.png"></a></div>
+	<div class="top-banner-buttons"></div>
+  </div>
+
+<div id="wrapper">
+	<div class="game-container">
+		<canvas id="main-stage" width="1300px" height="900px">Update your browser!</canvas>
+		<div class="playerBox" id="player1"><b>PLAYER 1 (HOST)</b><br/><div id="p1details"><div class="button" id="p1seatreq">Sit</div></div></div>
+		<div class="playerBox" id="player2"><b>PLAYER 2</b><br/><div id="p2details"><div class="button" id="p2seatreq">Sit</div></div><div id="p2hostoptions"></div></div>
+		<div class="playerBox" id="player3"><b>PLAYER 3</b><br/><div id="p3details"><div class="button" id="p3seatreq">Sit</div></div><div id="p3hostoptions"></div></div>
+		<div class="playerBox" id="player4"><b>PLAYER 4</b><br/><div id="p4details"><div class="button" id="p4seatreq">Sit</div></div><div id="p4hostoptions"></div></div>
+		
+		<!-- Displaying Game Messages -->
+		<div id="gameMessages">Messages go here!</div>
+		
+		<!-- For displaying player's cards -->
+		<div class="playerCard" id="pc1" onclick="selectCard(1);" draggable="true" ondragstart="return dragStart(event)" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)"></div>
+	<div class="playerCard" id="pc2" onclick="selectCard(2);" draggable="true" ondragstart="return dragStart(event)" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)"></div>
+	<div class="playerCard" id="pc3" onclick="selectCard(3);"  draggable="true" ondragstart="return dragStart(event)" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)"></div>
+	<div class="playerCard" id="pc4" onclick="selectCard(4);"  draggable="true" ondragstart="return dragStart(event)" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)"></div>
+	<div class="playerCard" id="pc5" onclick="selectCard(5);"  draggable="true" ondragstart="return dragStart(event)" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)"></div>
+	<div class="playerCard" id="pc6" onclick="selectCard(6);"  draggable="true" ondragstart="return dragStart(event)" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)"></div>
+	<div class="playerCard" id="pc7" onclick="selectCard(7);"  draggable="true" ondragstart="return dragStart(event)" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)"></div>
+	<div class="playerCard" id="pc8" onclick="selectCard(8);"  draggable="true" ondragstart="return dragStart(event)" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)"></div>
+	<div class="playerCard" id="pc9" onclick="selectCard(9);"  draggable="true" ondragstart="return dragStart(event)" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)"></div>
+	<div class="playerCard" id="pc10" onclick="selectCard(10);"  draggable="true" ondragstart="return dragStart(event)" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)"></div>
+	<div class="playerCard" id="pc11" onclick="selectCard(11);"  draggable="true" ondragstart="return dragStart(event)" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)"></div>
+	<div class="playerCard" id="pc12" onclick="selectCard(12);"  draggable="true" ondragstart="return dragStart(event)" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)"></div>
+	<div class="playerCard" id="pc13" onclick="selectCard(13);"  draggable="true" ondragstart="return dragStart(event)" ondragenter="return dragEnter(event)" ondrop="return dragDrop(event)" ondragover="return dragOver(event)"></div>
+		
+		<div class = "playerCard" id="prev11"></div>
+		<div class = "playerCard" id="prev12"></div>
+		<div class = "playerCard" id="prev13"></div>
+		<div class = "playerCard" id="prev14"></div>
+		<div class = "playerCard" id="prev15"></div>
+		
+		<div class = "playerCard" id="prev21"></div>
+		<div class = "playerCard" id="prev22"></div>
+		<div class = "playerCard" id="prev23"></div>
+		<div class = "playerCard" id="prev24"></div>
+		<div class = "playerCard" id="prev25"></div>
+		
+		<div class = "playerCard" id="prev31"></div>
+		<div class = "playerCard" id="prev32"></div>
+		<div class = "playerCard" id="prev33"></div>
+		<div class = "playerCard" id="prev34"></div>
+		<div class = "playerCard" id="prev35"></div>
+		
+		<!-- sort button -->
+		<div class="button" id="sortButton">Sort</div>
+		<div class="button" id="submitHand">Submit Hand</div>
+		<div class="button" id="passGo">Pass</div>
+		<div class="button" id="newGameButton">New Game</div>
+		
+		<!--change game timer -->
+		<div id="gameTimeContainer">
+			Turn length (seconds): <br/>
+			<input id="gameTime" value="60">
+			<div class="button" id="updateGameTime">Update</div>
+		</div>
+		
+	</div>
+	
+    <div class="container clearfix">
+      <div class="chat">
+        <div class="chat-header clearfix">
+          <img src="<%= user.picture %>" alt="avatar">
+          <div class="chat-about">
+            <div class="chat-room"><%= room.title %></div>
+            <div class="chat-num-users"> User(s)</div>
+          </div>
+          <i class="fa fa-users"></i>
+        </div> <!-- end chat-header -->
+        
+        <div class="chat-history">
+          <ul>
+          </ul>
+        </div> <!-- end chat-history -->
+        
+        <div class="chat-message clearfix">
+          <textarea name="message" placeholder ="Type your message" rows="2"></textarea> 
+          <button type="submit">Send</button>
+        </div> <!-- end chat-message -->
+      </div> <!-- end chat -->
+      
+      <div class="controls">
+          <a href="/logout" class="logout-btn">Logout</a>
+          <a href="/rooms" class="rooms-btn">Rooms</a>
+      </div>
+
+      <div class="users-list">
+        <ul class="list">
+        </ul>
+      </div>
+    </div> <!-- end container -->
+	
+</div>
+
+	<!-- preload card images into cache ready for game to start -->
+	
+	<div id="preload">
+   <img src="/img/cards/1.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/2.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/3.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/4.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/5.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/6.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/7.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/8.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/9.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/10.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/11.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/12.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/13.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/14.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/15.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/16.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/17.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/18.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/19.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/20.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/21.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/22.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/23.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/24.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/25.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/26.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/27.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/28.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/29.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/30.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/31.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/32.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/33.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/34.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/35.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/36.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/37.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/38.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/39.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/40.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/41.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/42.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/43.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/44.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/45.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/46.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/47.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/48.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/49.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/50.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/51.png" width="1" height="1" alt="Image 01" />
+   <img src="/img/cards/52.png" width="1" height="1" alt="Image 01" />
+   
+   </div>
+	
+	
+	
+	
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/main.js"></script>
+    <script>$(function(){app.chat('<%= room.id %>', '<%= user.username %>')});</script>
+  </body>
+</html>
