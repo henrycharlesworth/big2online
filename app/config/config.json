@@ -1,5 +1,5 @@
 {
-	"dbURI": "mongodb://localhost/userAuthTest",
+	"dbURI": "mongodb://<user>:<pass>@jello.modulusmongo.net:27017/sa5buqoH",
 	"sessionSecret": "THEGREATandWonderfulHernBear564738292938485757483839",
 	"facebook": {
 		"clientID": "1721178281536502",
