@@ -10,6 +10,9 @@
     "url": "",
     "type": "git"
   },
+  "engines": {
+	"node": "4.4.2"
+  },
   "author": "Henry Charlesworth",
   "license": "MIT",
   "bugs": {
