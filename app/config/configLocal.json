@@ -1,5 +1,5 @@
 {
-	"dbURI": "mongodb://heroku_8s0p99gg:f54ubao5rsjil3sf145var2jqf@ds011331.mlab.com:11331/heroku_8s0p99gg",
+	"dbURI": "mongodb://localhost/userAuthTest",
 	"sessionSecret": "THEGREATandWonderfulHernBear564738292938485757483839",
 	"facebook": {
 		"clientID": "1721178281536502",
@@ -14,8 +14,8 @@
 		"profileFields": ["id", "displayName", "photos"]
 	},
 	"redis": {
-		"host": "redis://h:p08e8f4534f58c8e0277eb09700843f8f046daaa6441d247cc3caed316dda83bb@ec2-34-198-124-158.compute-1.amazonaws.com",
-		"port": 10939,
+		"host": "127.0.0.1",
+		"port": 6379,
 		"password": ""
 	}
 }
