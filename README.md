@@ -8,3 +8,6 @@ Multiplayer card game implementation of the four player card game called "Big 2"
 * Very Basic AI implemented to play against
 
 <img src="https://www.henrycharlesworth.com/fileStorage/big2GamePreview1.png"/> 
+
+
+<img src="https://www.henrycharlesworth.com/fileStorage/big2GamePreview2.png"/> 
