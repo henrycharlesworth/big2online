@@ -6,5 +6,11 @@ Multiplayer card game implementation of the four player card game called "Big 2"
 * Lobby system
 * Chat system
 * Very Basic AI implemented to play against
-
-<img src="https://www.henrycharlesworth.com/fileStorage/big2LoginPreview.png"/> <img src="https://www.henrycharlesworth.com/fileStorage/big2LobbyPreview.png"/> 
+<div>
+  <div style="float: left;">
+    <img src="https://www.henrycharlesworth.com/fileStorage/big2LoginPreview.png"/> 
+  </div>
+  <div style="float: left;">
+    <img src="https://www.henrycharlesworth.com/fileStorage/big2LobbyPreview.png"/> 
+  </div>
+ </div>
