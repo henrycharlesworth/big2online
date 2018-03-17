@@ -1,7 +1,7 @@
 {
   "name": "Big 2 Online",
   "version": "1.0.0",
-  "description": "A Real Time Chat Application built using Node.js, Express, Mongoose, Socket.io, Passport, & Redis.",
+  "description": "A Real Time Multiplayer Big 2 Card Game built using Node.js, Express, Mongoose, Socket.io, Passport, & Redis.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
